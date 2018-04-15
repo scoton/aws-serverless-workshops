@@ -29,7 +29,7 @@ After you've created the table, note the ARN for use in the next step.
 
 1. Choose **Create table**.
 
-1. Enter `Rides` for the **Table name**. This field is case sensitive.
+1. Enter `Rides-student#` for the **Table name**. This field is case sensitive. Remember that "#" is your student number.
 
 1. Enter `RideId` for the **Partition key** and select **String** for the key type. This field is case sensitive.
 
@@ -50,7 +50,7 @@ Every Lambda function has an IAM role associated with it. This role defines what
 
 #### High-Level Instructions
 
-Use the IAM console to create a new role. Name it `WildRydesLambda` and select AWS Lambda for the role type. You'll need to attach policies that grant your function permissions to write to Amazon CloudWatch Logs and put items to your DynamoDB table.
+Use the IAM console to create a new role. Name it `WildRydesLambda-student#` and select AWS Lambda for the role type. You'll need to attach policies that grant your function permissions to write to Amazon CloudWatch Logs and put items to your DynamoDB table.
 
 Attach the managed policy called `AWSLambdaBasicExecutionRole` to this role to grant the necessary CloudWatch Logs permissions. Also, create a custom inline policy for your role that allows the `ddb:PutItem` action for the table you created in the previous section.
 
@@ -69,7 +69,7 @@ Attach the managed policy called `AWSLambdaBasicExecutionRole` to this role to g
 
 1. Click **Next: Review**.
 
-1. Enter `WildRydesLambda` for the **Role name**.
+1. Enter `WildRydesLambda-student#` for the **Role name**.
 
 1. Choose **Create role**.
 
@@ -108,9 +108,9 @@ AWS Lambda will run your code in response to events such as an HTTP request. In 
 
 #### High-Level Instructions
 
-Use the AWS Lambda console to create a new Lambda function called `RequestUnicorn` that will process the API requests. Use the provided [requestUnicorn.js](requestUnicorn.js) example implementation for your function code. Just copy and paste from that file into the AWS Lambda console's editor.
+Use the AWS Lambda console to create a new Lambda function called `RequestUnicorn-student#` that will process the API requests. Use the provided [requestUnicorn.js](requestUnicorn.js) example implementation for your function code. Just copy and paste from that file into the AWS Lambda console's editor.
 
-Make sure to configure your function to use the `WildRydesLambda` IAM role you created in the previous section.
+Make sure to configure your function to use the `WildRydesLambda-student#` IAM role you created in the previous section.
 
 <details>
 <summary><strong>Step-by-step instructions (expand for details)</strong></summary><p>
@@ -177,6 +177,10 @@ For this module you will test the function that you built using the AWS Lambda c
     ![Configure test event](../images/configure-test-event-2.png)
 
 1. Click **Create**.
+
+1. Go to your Lambda function code and look for the table `Rides`, you should update the value to `Rides-student#`.
+
+1. Click **Save**.
 
 1. On the main function edit screen click **Test** with `TestRequestEvent` selected in the dropdown.   
 
