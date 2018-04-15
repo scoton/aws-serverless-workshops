@@ -37,7 +37,7 @@ Use the Amazon Cognito console to create a new user pool using the default setti
 
 1. Choose **Create a User Pool**
 
-1. Provide a name for your user pool such as `WildRydes`, then select **Review Defaults**
+1. Provide a name for your user pool such as `WildRydes-student#`, then select **Review Defaults**
 
     ![Create a user pool screenshot](../images/create-a-user-pool.png)
 
@@ -91,18 +91,18 @@ The [/js/config.js](../1_StaticWebHosting/website/js/config.js) file contains se
 
     ![Pool ID](../images/client-id.png)
 
-    The value for `region` should be the AWS Region code where you created your user pool. E.g. `us-east-1` for the N. Virginia Region, or `us-west-2` for the Oregon Region. If you're not sure which code to use, you can look at the Pool ARN value on the Pool details page. The Region code is the part of the ARN immediately after `arn:aws:cognito-idp:`.
+    The value for `region` should be the AWS Region code where you created your user pool. E.g. `us-east-2` for the Ohio Region, or `us-west-2` for the Oregon Region. If you're not sure which code to use, you can look at the Pool ARN value on the Pool details page. The Region code is the part of the ARN immediately after `arn:aws:cognito-idp:`.
 
     The updated config.js file should look like this. Note that the actual values for your file will be different:
     ```JavaScript
     window._config = {
         cognito: {
-            userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
+            userPoolId: 'us-east-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
             userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
-            region: 'us-west-2' // e.g. us-east-2
+            region: 'us-east-2' // e.g. us-east-2
         },
         api: {
-            invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod',
+            invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-east-2.amazonaws.com/prod',
         }
     };
     ```
