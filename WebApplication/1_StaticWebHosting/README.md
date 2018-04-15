@@ -41,7 +41,7 @@ Amazon S3 can be used to host static websites without having to configure or man
 
 #### High-Level Instructions
 
-Use the console or AWS CLI to create an Amazon S3 bucket. Keep in mind that your bucket's name must be globally unique across all regions and customers. We recommend using a name like `wildrydes-student-number`. If you get an error that your bucket name already exists, try adding additional numbers or characters until you find an unused name.
+Use the console or AWS CLI to create an Amazon S3 bucket. Keep in mind that your bucket's name must be globally unique across all regions and customers. We recommend using a name like `wildrydes-student#`, where "#" means your student number (ex: 01, 02, 03, etc). If you get an error that your bucket name already exists, try adding additional numbers or characters until you find an unused name.
 
 <details>
 <summary><strong>Step-by-step instructions (expand for details)</strong></summary><p>
